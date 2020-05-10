@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project onyx-smoke-276713
   - gcloud config set compute/zone europe-north1-a
   - gcloud container clusters get-credentials multi-cluster
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
   - docker build -t kentloog/react-test -f ./client/Dockerfile.dev ./client
 
 script:
